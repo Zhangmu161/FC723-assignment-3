@@ -9,6 +9,16 @@ class EuclideanAlgorithm:
             a, b = b, a % b
         return a
 
-# Example usage:
-gcd_calculator = EuclideanAlgorithm(48, 18)
-print(gcd_calculator.calculate_gcd())  # Output: 6
+def main():
+    try:
+        a = int(input("Enter the first number (must be positive integer): "))
+        b = int(input("Enter the second number (must be positive integer): "))
+        if a <= 0 or b <= 0:
+            raise ValueError("Numbers must be positive integers.")
+        gcd_calculator = EuclideanAlgorithm(a, b)
+        print(f"The GCD of {a} and {b} is: {gcd_calculator.calculate_gcd()}")
+    except ValueError as e:
+        print(e)
+
+if __name__ == "__main__":
+    main()
